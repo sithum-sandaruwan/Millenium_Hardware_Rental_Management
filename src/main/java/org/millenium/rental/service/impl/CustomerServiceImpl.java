@@ -1,6 +1,10 @@
 package org.millenium.rental.service.impl;
 
 import org.millenium.rental.service.CustomerService;
+import org.springframework.stereotype.Service;
 
-public class CustomerServiceImpl {
+@Service
+public class CustomerServiceImpl implements CustomerService{
+
+
 }

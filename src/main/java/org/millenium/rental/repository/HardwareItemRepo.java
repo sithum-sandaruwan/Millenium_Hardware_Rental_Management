@@ -1,4 +1,4 @@
 package org.millenium.rental.repository;
 
-public class HardwareItemRepo {
+public interface HardwareItemRepo {
 }

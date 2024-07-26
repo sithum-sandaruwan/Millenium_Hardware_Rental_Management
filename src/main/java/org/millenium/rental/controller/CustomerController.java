@@ -2,6 +2,8 @@ package org.millenium.rental.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.millenium.rental.dto.Customer;
+import org.millenium.rental.service.CustomerService;
+import org.millenium.rental.service.impl.CustomerServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,16 +14,18 @@ import java.util.List;
 @RequestMapping("/customer-controller")
 public class CustomerController {
 
-    List<Customer> customers = new ArrayList();
+//    List<Customer> customers = new ArrayList();
+
+    final CustomerService customerService;
 
     @PostMapping("/add-customer")
     public void addCustomer(@RequestBody Customer customer) {
-        customers.add(customer);
+
     }
 
     @GetMapping("/get-all-cust")
     public List<Customer> getAllCustomers() {
-        return customers;
+        return null;
     }
 
     @PostMapping("/delete-customer/{id}")
