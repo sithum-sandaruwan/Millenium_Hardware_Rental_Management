@@ -9,7 +9,7 @@ public interface HardwareItemService {
 
     void addItem(HardwareItem item);
 
-    String deleteItemById(Long id);
+    void deleteItemById(Long id);
 
-    void updateCustomerById(HardwareItem item);
+    void updateItemById(HardwareItem item);
 }

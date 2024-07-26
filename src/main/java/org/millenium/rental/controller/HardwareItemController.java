@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/hardware-item-controller")
+@CrossOrigin
 public class HardwareItemController {
 
 //    List<Customer> customers = new ArrayList();
@@ -31,16 +32,16 @@ public class HardwareItemController {
     }
 
     @DeleteMapping("/delete-item/{id}")
-    public String deleteItemById(@PathVariable Long id) {
+    public void deleteItemById(@PathVariable Long id) {
 
-        return hardwareItemService.deleteItemById(id);
+         hardwareItemService.deleteItemById(id);
 
     }
 
     @PostMapping("/update-item")
     public void updateItemById(@RequestBody HardwareItem item) {
 
-        hardwareItemService.updateCustomerById(item);
+        hardwareItemService.updateItemById(item);
 
     }
 

@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/customer-controller")
+@CrossOrigin
 public class CustomerController {
 
 //    List<Customer> customers = new ArrayList();
