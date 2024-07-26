@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class Rental {
 
-    private Long rent_id;
-    private Date rentl_date;
+    private Long id;
+    private Date rental_date;
     private Date return_date;
     private Date due_date;
-    private Date fine;
-    private Date total_cost;
+    private Integer fine;
+    private Double total_cost;
 
 }
