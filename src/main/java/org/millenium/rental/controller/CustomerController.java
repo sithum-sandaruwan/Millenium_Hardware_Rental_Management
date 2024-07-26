@@ -12,21 +12,28 @@ import java.util.List;
 @RequestMapping("/customer-controller")
 public class CustomerController {
 
-    List<Customer> customers =  new ArrayList();
+    List<Customer> customers = new ArrayList();
 
     @PostMapping("/add-customer")
-    public void addCustomer(@RequestBody Customer customer){
+    public void addCustomer(@RequestBody Customer customer) {
         customers.add(customer);
     }
 
     @GetMapping("/get-all-cust")
-    public List<Customer> getAllCustomers(){
+    public List<Customer> getAllCustomers() {
         return customers;
     }
 
-    @PostMapping("")
-    void deleteCustomerById(){
+    @PostMapping("/delete-customer/{id}")
+    void deleteCustomerById(@PathVariable Long id) {
+
 
     }
+
+    @PostMapping
+    void updateCustomerById(@RequestBody Customer customer) {
+
+    }
+
 
 }
