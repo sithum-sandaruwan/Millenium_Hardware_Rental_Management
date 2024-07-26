@@ -1,17 +1,31 @@
 package org.millenium.rental.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.millenium.rental.dto.Customer;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/customer-controller")
 public class CustomerController {
 
-    @GetMapping("/add-customer")
-    void addCustomer(){
+    List<Customer> customers =  new ArrayList();
+
+    @PostMapping("/add-customer")
+    public void addCustomer(@RequestBody Customer customer){
+        customers.add(customer);
+    }
+
+    @GetMapping("/get-all-cust")
+    public List<Customer> getAllCustomers(){
+        return customers;
+    }
+
+    @PostMapping("")
+    void deleteCustomerById(){
 
     }
 
