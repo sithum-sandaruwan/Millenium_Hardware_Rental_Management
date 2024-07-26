@@ -20,12 +20,12 @@ public class CustomerController {
 
     @PostMapping("/add-customer")
     public void addCustomer(@RequestBody Customer customer) {
-
+        customerService.addCustomer(customer);
     }
 
     @GetMapping("/get-all-cust")
     public List<Customer> getAllCustomers() {
-        return null;
+        return customerService.getAllCustomers();
     }
 
     @PostMapping("/delete-customer/{id}")
