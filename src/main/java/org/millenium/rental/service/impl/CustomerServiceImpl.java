@@ -38,11 +38,16 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void deleteCustomerById(Long id) {
-
+        if (customerRepo.existsById(id)){
+            customerRepo.deleteById(id);
+        }
     }
 
     @Override
     public void updateCustomerById(Customer customer) {
 
+        if (customerRepo.findById(customer.getId()).isPresent()){
+            customerRepo.save(new ObjectMapper().convertValue(customer,CustomerEntity.class));
+        }
     }
 }

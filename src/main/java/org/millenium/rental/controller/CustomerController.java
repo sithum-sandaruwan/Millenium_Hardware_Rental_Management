@@ -3,10 +3,8 @@ package org.millenium.rental.controller;
 import lombok.RequiredArgsConstructor;
 import org.millenium.rental.dto.Customer;
 import org.millenium.rental.service.CustomerService;
-import org.millenium.rental.service.impl.CustomerServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -28,14 +26,17 @@ public class CustomerController {
         return customerService.getAllCustomers();
     }
 
-    @PostMapping("/delete-customer/{id}")
-    void deleteCustomerById(@PathVariable Long id) {
+    @DeleteMapping("/delete-customer/{id}")
+    public String deleteCustomerById(@PathVariable Long id) {
 
-
+        customerService.deleteCustomerById(id);
+        return "Deleted";
     }
 
-    @PostMapping
-    void updateCustomerById(@RequestBody Customer customer) {
+    @PostMapping("/update-customer")
+    public void updateCustomerById(@RequestBody Customer customer) {
+
+        customerService.updateCustomerById(customer);
 
     }
 
